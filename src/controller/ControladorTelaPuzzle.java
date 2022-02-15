@@ -124,12 +124,12 @@ public class ControladorTelaPuzzle {
                                 controladorGeral.exibirTelaBusca(telaPuzzle.getFrmTelaPuzzle(), profundidade + "", (tempoFinal - tempoInicio) + "ms");
                                 controladorGeral.desenharTabelaTelaBusca();
                                 controladorGeral.ativarListenerVisibilidadeTelaBusca();
-                            } else {
-                                System.out.println("Sem solucao");
+                            }else{
+                                JOptionPane.showMessageDialog(telaPuzzle.getFrmTelaPuzzle(), "O desafio nao possui solucao", "Sem solucao", JOptionPane.ERROR_MESSAGE);
                             }
                         }
                     } catch (Exception ex) {
-                        ex.printStackTrace();
+                    	JOptionPane.showMessageDialog(telaPuzzle.getFrmTelaPuzzle(), "O desafio possui uma complexidade muito alta", "Complexidade alta", JOptionPane.WARNING_MESSAGE);
                     } finally {
                         telaCarregando.getFrmTelaCarregando().dispose();
                     }
